@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learnin - AI-Powered Quizzes from Your Documents</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .gradient-bg {
+        background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow:
+          0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="/" class="text-2xl font-bold text-blue-600">Learnin</a>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#features" class="text-gray-600 hover:text-blue-600"
+            >Features</a
+          >
+          <a href="/pricing/" class="text-gray-600 hover:text-blue-600"
+            >Pricing</a
+          >
+          <a href="/terms/" class="text-gray-600 hover:text-blue-600">Terms</a>
+        </div>
+        <a
+          href="#get-started"
+          class="hidden md:block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          >Get Started</a
+        >
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-gray-600 focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+        <a href="#features" class="block py-2 text-gray-600 hover:text-blue-600"
+          >Features</a
+        >
+        <a href="/pricing/" class="block py-2 text-gray-600 hover:text-blue-600"
+          >Pricing</a
+        >
+        <a href="/terms/" class="block py-2 text-gray-600 hover:text-blue-600"
+          >Terms</a
+        >
+        <a
+          href="#get-started"
+          class="block mt-2 bg-blue-600 text-white text-center font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          >Get Started</a
+        >
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+      <section class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-24 text-center">
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            Create Quizzes from Any Document in Seconds
+          </h1>
+          <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto opacity-90">
+            Upload your study guides, lecture notes, or articles. Our AI will
+            generate engaging quizzes to help you learn faster and smarter.
+          </p>
+          <div class="mt-8">
+            <a
+              href="#get-started"
+              class="bg-white text-blue-600 font-bold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+              >Start Creating for Free</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="py-20">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+          <div class="grid md:grid-cols-3 gap-12 text-center">
+            <!-- Step 1 -->
+            <div class="flex flex-col items-center">
+              <div
+                class="flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-600 rounded-full text-2xl font-bold mb-4"
+              >
+                1
+              </div>
+              <h3 class="text-xl font-bold mb-2">Upload Document</h3>
+              <p class="text-gray-600">
+                Simply upload a PDF, DOCX, or paste text from any source
+                material you want to learn.
+              </p>
+            </div>
+            <!-- Step 2 -->
+            <div class="flex flex-col items-center">
+              <div
+                class="flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-600 rounded-full text-2xl font-bold mb-4"
+              >
+                2
+              </div>
+              <h3 class="text-xl font-bold mb-2">AI Generates Quiz</h3>
+              <p class="text-gray-600">
+                Our intelligent system analyzes the content and creates a
+                variety of question types.
+              </p>
+            </div>
+            <!-- Step 3 -->
+            <div class="flex flex-col items-center">
+              <div
+                class="flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-600 rounded-full text-2xl font-bold mb-4"
+              >
+                3
+              </div>
+              <h3 class="text-xl font-bold mb-2">Learn & Share</h3>
+              <p class="text-gray-600">
+                Take the quiz yourself to reinforce knowledge or share it with
+                students and friends.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="bg-white py-20">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Powerful Features for Effective Learning
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div
+              class="bg-gray-50 p-6 rounded-lg shadow-sm feature-card transition-all"
+            >
+              <h3 class="text-xl font-bold mb-2">Multiple Question Types</h3>
+              <p class="text-gray-600">
+                From multiple-choice to fill-in-the-blank, our AI creates
+                diverse questions to test understanding.
+              </p>
+            </div>
+            <!-- Feature 2 -->
+            <div
+              class="bg-gray-50 p-6 rounded-lg shadow-sm feature-card transition-all"
+            >
+              <h3 class="text-xl font-bold mb-2">Supports Various Formats</h3>
+              <p class="text-gray-600">
+                Upload PDF, DOCX, TXT files, or simply paste text. We handle the
+                rest.
+              </p>
+            </div>
+            <!-- Feature 3 -->
+            <div
+              class="bg-gray-50 p-6 rounded-lg shadow-sm feature-card transition-all"
+            >
+              <h3 class="text-xl font-bold mb-2">Customizable Quizzes</h3>
+              <p class="text-gray-600">
+                Easily edit, add, or remove questions to tailor the quiz to your
+                exact needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section id="get-started" class="gradient-bg">
+        <div class="container mx-auto px-6 py-20 text-center text-white">
+          <h2 class="text-3xl font-bold">
+            Ready to Supercharge Your Learning?
+          </h2>
+          <p class="mt-4 text-lg opacity-90">
+            Start creating AI-powered quizzes today.
+          </p>
+          <div class="mt-8">
+            <a
+              href="/pricing/"
+              class="bg-white text-blue-600 font-bold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+              >View Pricing & Sign Up</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+      <div class="container mx-auto px-6 py-8 text-center">
+        <p>&copy; 2025 Learnin. All rights reserved.</p>
+        <div class="mt-4 space-x-6">
+          <a href="/pricing/" class="hover:underline">Pricing</a>
+          <a href="/terms/" class="hover:underline">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
