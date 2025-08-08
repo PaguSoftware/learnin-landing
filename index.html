@@ -3,237 +3,367 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Learnin - AI-Powered Quizzes from Your Documents</title>
+    <title>Learnin - AI-Powered Quiz Generator</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Custom Styles -->
     <style>
       body {
         font-family: "Inter", sans-serif;
       }
       .gradient-bg {
-        background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+        background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
       }
-      .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow:
-          0 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      .hero-gradient-text {
+        background: -webkit-linear-gradient(45deg, #2a2a72, #009ffd);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .video-container {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+      /* Helper to hide sections */
+      .page-section.hidden {
+        display: none;
       }
     </style>
   </head>
   <body class="bg-gray-50 text-gray-800">
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-      <nav
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <a href="/" class="text-2xl font-bold text-blue-600">Learnin</a>
-        <div class="hidden md:flex items-center space-x-6">
-          <a href="#features" class="text-gray-600 hover:text-blue-600"
-            >Features</a
-          >
-          <a href="/pricing" class="text-gray-600 hover:text-blue-600"
-            >Pricing</a
-          >
-          <a href="/terms" class="text-gray-600 hover:text-blue-600">Terms</a>
-        </div>
+    <header class="absolute top-0 left-0 w-full z-10 py-6 px-4 sm:px-6 lg:px-8">
+      <div class="container mx-auto flex justify-between items-center">
         <a
-          href="#get-started"
-          class="hidden md:block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-          >Get Started</a
-        >
-        <button
-          id="mobile-menu-button"
-          class="md:hidden text-gray-600 focus:outline-none"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-        </button>
-      </nav>
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-        <a href="#features" class="block py-2 text-gray-600 hover:text-blue-600"
-          >Features</a
-        >
-        <a href="/pricing/" class="block py-2 text-gray-600 hover:text-blue-600"
-          >Pricing</a
-        >
-        <a href="/terms/" class="block py-2 text-gray-600 hover:text-blue-600"
-          >Terms</a
+          href="#"
+          onclick="showPage('main-content'); return false;"
+          class="text-3xl font-bold text-white cursor-pointer"
+          >Learnin</a
         >
         <a
-          href="#get-started"
-          class="block mt-2 bg-blue-600 text-white text-center font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          href="#cta"
+          class="bg-white text-blue-600 font-semibold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
           >Get Started</a
         >
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <main>
-      <section class="gradient-bg text-white">
-        <div class="container mx-auto px-6 py-24 text-center">
-          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
-            Create Quizzes from Any Document in Seconds
-          </h1>
-          <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto opacity-90">
-            Upload your study guides, lecture notes, or articles. Our AI will
-            generate engaging quizzes to help you learn faster and smarter.
-          </p>
-          <div class="mt-8">
+    <!-- Main Content Area -->
+    <main class="relative">
+      <!-- Main Landing Page Content -->
+      <div id="main-content" class="page-section">
+        <section
+          class="gradient-bg pt-32 pb-24 md:pt-48 md:pb-32 text-center text-white"
+        >
+          <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+              Effortless Quizzes, Powered by AI
+            </h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-12">
+              Stop wasting time creating study materials. Learnin instantly
+              generates custom quizzes on any topic, so you can focus on what
+              matters most: learning.
+            </p>
+
+            <div
+              class="video-container max-w-4xl mx-auto rounded-2xl overflow-hidden border-8 border-white/50"
+            >
+              <video
+                src="https://placehold.co/1920x1080.mp4?text=Your+App+Demo"
+                autoplay
+                loop
+                muted
+                playsinline
+                class="w-full h-full object-cover"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" class="py-20 sm:py-24">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+              <h3 class="text-3xl md:text-4xl font-bold hero-gradient-text">
+                The Future of Studying is Here
+              </h3>
+              <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                Discover how Learnin transforms any content into an interactive
+                learning experience.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+              <div
+                class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-2"
+              >
+                <div
+                  class="bg-blue-100 text-blue-600 rounded-full h-16 w-16 flex items-center justify-center mb-6"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    />
+                  </svg>
+                </div>
+                <h4 class="text-2xl font-bold mb-3">Instant Quiz Generation</h4>
+                <p class="text-gray-600">
+                  Paste a link, upload a PDF, or just type a topic. Our AI
+                  creates relevant, challenging questions in seconds.
+                </p>
+              </div>
+              <div
+                class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-2"
+              >
+                <div
+                  class="bg-green-100 text-green-600 rounded-full h-16 w-16 flex items-center justify-center mb-6"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    />
+                  </svg>
+                </div>
+                <h4 class="text-2xl font-bold mb-3">Multiple Question Types</h4>
+                <p class="text-gray-600">
+                  From multiple-choice to fill-in-the-blank and true/false, get
+                  a variety of questions to test your knowledge comprehensively.
+                </p>
+              </div>
+              <div
+                class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-2"
+              >
+                <div
+                  class="bg-purple-100 text-purple-600 rounded-full h-16 w-16 flex items-center justify-center mb-6"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h4 class="text-2xl font-bold mb-3">Track Your Progress</h4>
+                <p class="text-gray-600">
+                  Identify your strengths and weaknesses with our detailed
+                  performance analytics. Know exactly where to focus your
+                  efforts.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="cta" class="bg-white">
+          <div class="container mx-auto px-4 py-20 sm:py-24 text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">
+              Ready to Revolutionize Your Learning?
+            </h3>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+              Join thousands of students and professionals who are learning
+              smarter, not harder. Get started for free today.
+            </p>
             <a
-              href="#get-started"
-              class="bg-white text-blue-600 font-bold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform"
-              >Start Creating for Free</a
+              href="#"
+              class="bg-blue-600 text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
+              >Generate Your First Quiz</a
             >
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
-      <!-- How It Works Section -->
-      <section class="py-20">
-        <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
-          <div class="grid md:grid-cols-3 gap-12 text-center">
-            <!-- Step 1 -->
-            <div class="flex flex-col items-center">
-              <div
-                class="flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-600 rounded-full text-2xl font-bold mb-4"
-              >
-                1
-              </div>
-              <h3 class="text-xl font-bold mb-2">Upload Document</h3>
-              <p class="text-gray-600">
-                Simply upload a PDF, DOCX, or paste text from any source
-                material you want to learn.
+      <!-- Privacy Policy Page -->
+      <div id="privacy-page" class="page-section hidden">
+        <section class="py-24 pt-40">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <h2 class="text-4xl font-bold text-center mb-12 hero-gradient-text">
+              Privacy Policy
+            </h2>
+            <div
+              class="bg-white p-8 sm:p-12 rounded-lg shadow-lg text-gray-700 space-y-6"
+            >
+              <p><strong>Last updated:</strong> August 08, 2025</p>
+              <p>
+                Learnin ("us", "we", or "our") operates the Learnin website (the
+                "Service"). This page informs you of our policies regarding the
+                collection, use, and disclosure of personal data when you use
+                our Service and the choices you have associated with that data.
               </p>
-            </div>
-            <!-- Step 2 -->
-            <div class="flex flex-col items-center">
-              <div
-                class="flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-600 rounded-full text-2xl font-bold mb-4"
-              >
-                2
-              </div>
-              <h3 class="text-xl font-bold mb-2">AI Generates Quiz</h3>
-              <p class="text-gray-600">
-                Our intelligent system analyzes the content and creates a
-                variety of question types.
-              </p>
-            </div>
-            <!-- Step 3 -->
-            <div class="flex flex-col items-center">
-              <div
-                class="flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-600 rounded-full text-2xl font-bold mb-4"
-              >
-                3
-              </div>
-              <h3 class="text-xl font-bold mb-2">Learn & Share</h3>
-              <p class="text-gray-600">
-                Take the quiz yourself to reinforce knowledge or share it with
-                students and friends.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Features Section -->
-      <section id="features" class="bg-white py-20">
-        <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold text-center mb-12">
-            Powerful Features for Effective Learning
-          </h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Feature 1 -->
-            <div
-              class="bg-gray-50 p-6 rounded-lg shadow-sm feature-card transition-all"
-            >
-              <h3 class="text-xl font-bold mb-2">Multiple Question Types</h3>
-              <p class="text-gray-600">
-                From multiple-choice to fill-in-the-blank, our AI creates
-                diverse questions to test understanding.
+              <h3 class="text-2xl font-bold pt-4">
+                Information Collection and Use
+              </h3>
+              <p>
+                We collect several different types of information for various
+                purposes to provide and improve our Service to you. This may
+                include, but is not limited to, usage data, cookies, and
+                personal information you provide upon registration.
               </p>
-            </div>
-            <!-- Feature 2 -->
-            <div
-              class="bg-gray-50 p-6 rounded-lg shadow-sm feature-card transition-all"
-            >
-              <h3 class="text-xl font-bold mb-2">Supports Various Formats</h3>
-              <p class="text-gray-600">
-                Upload PDF, DOCX, TXT files, or simply paste text. We handle the
-                rest.
-              </p>
-            </div>
-            <!-- Feature 3 -->
-            <div
-              class="bg-gray-50 p-6 rounded-lg shadow-sm feature-card transition-all"
-            >
-              <h3 class="text-xl font-bold mb-2">Customizable Quizzes</h3>
-              <p class="text-gray-600">
-                Easily edit, add, or remove questions to tailor the quiz to your
-                exact needs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- CTA Section -->
-      <section id="get-started" class="gradient-bg">
-        <div class="container mx-auto px-6 py-20 text-center text-white">
-          <h2 class="text-3xl font-bold">
-            Ready to Supercharge Your Learning?
-          </h2>
-          <p class="mt-4 text-lg opacity-90">
-            Start creating AI-powered quizzes today.
-          </p>
-          <div class="mt-8">
-            <a
-              href="/pricing/"
-              class="bg-white text-blue-600 font-bold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform"
-              >View Pricing & Sign Up</a
-            >
+              <h3 class="text-2xl font-bold pt-4">Use of Data</h3>
+              <p>
+                Learnin uses the collected data for various purposes: to provide
+                and maintain the Service, to notify you about changes to our
+                Service, to allow you to participate in interactive features of
+                our Service when you choose to do so, to provide customer care
+                and support, and to monitor the usage of the Service.
+              </p>
+
+              <h3 class="text-2xl font-bold pt-4">Security of Data</h3>
+              <p>
+                The security of your data is important to us, but remember that
+                no method of transmission over the Internet or method of
+                electronic storage is 100% secure. While we strive to use
+                commercially acceptable means to protect your Personal Data, we
+                cannot guarantee its absolute security.
+              </p>
+
+              <div class="text-center pt-8">
+                <a
+                  href="#"
+                  onclick="showPage('main-content'); return false;"
+                  class="text-blue-600 hover:underline font-semibold"
+                  >← Back to Home</a
+                >
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
+
+      <!-- Terms of Service Page -->
+      <div id="terms-page" class="page-section hidden">
+        <section class="py-24 pt-40">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <h2 class="text-4xl font-bold text-center mb-12 hero-gradient-text">
+              Terms of Service
+            </h2>
+            <div
+              class="bg-white p-8 sm:p-12 rounded-lg shadow-lg text-gray-700 space-y-6"
+            >
+              <p><strong>Last updated:</strong> August 08, 2025</p>
+              <h3 class="text-2xl font-bold pt-4">1. Acceptance of Terms</h3>
+              <p>
+                By accessing and using our Service, you accept and agree to be
+                bound by the terms and provision of this agreement. In addition,
+                when using these particular services, you shall be subject to
+                any posted guidelines or rules applicable to such services.
+              </p>
+
+              <h3 class="text-2xl font-bold pt-4">2. Use of the Service</h3>
+              <p>
+                You agree to use the Service for its intended purpose of
+                generating quizzes for educational and personal use. You must
+                not use this Service for any illegal or unauthorized purpose.
+                You agree to comply with all laws, rules, and regulations
+                applicable to your use of the Service.
+              </p>
+
+              <h3 class="text-2xl font-bold pt-4">3. Termination</h3>
+              <p>
+                We may terminate or suspend your access to our Service
+                immediately, without prior notice or liability, for any reason
+                whatsoever, including, without limitation, if you breach the
+                Terms.
+              </p>
+
+              <h3 class="text-2xl font-bold pt-4">
+                4. Limitation of Liability
+              </h3>
+              <p>
+                In no event shall Learnin, nor its directors, employees,
+                partners, agents, suppliers, or affiliates, be liable for any
+                indirect, incidental, special, consequential or punitive
+                damages, including without limitation, loss of profits, data,
+                use, goodwill, or other intangible losses, resulting from your
+                access to or use of or inability to access or use the Service.
+              </p>
+
+              <div class="text-center pt-8">
+                <a
+                  href="#"
+                  onclick="showPage('main-content'); return false;"
+                  class="text-blue-600 hover:underline font-semibold"
+                  >← Back to Home</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white">
-      <div class="container mx-auto px-6 py-8 text-center">
-        <p>&copy; 2025 Learnin. All rights reserved.</p>
-        <div class="mt-4 space-x-6">
-          <a href="/pricing/" class="hover:underline">Pricing</a>
-          <a href="/terms/" class="hover:underline">Terms of Service</a>
+    <footer class="gradient-bg text-white">
+      <div class="container mx-auto px-4 py-10 text-center">
+        <p>&copy; 2024 Learnin. All Rights Reserved.</p>
+        <div class="flex justify-center space-x-6 mt-4">
+          <a href="#" class="hover:text-gray-200">Twitter</a>
+          <a
+            href="#"
+            onclick="showPage('privacy-page'); return false;"
+            class="hover:text-gray-200 cursor-pointer"
+            >Privacy Policy</a
+          >
+          <a
+            href="#"
+            onclick="showPage('terms-page'); return false;"
+            class="hover:text-gray-200 cursor-pointer"
+            >Terms of Service</a
+          >
         </div>
       </div>
     </footer>
 
+    <!-- Page Switching Logic -->
     <script>
-      // Mobile menu toggle
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-      mobileMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
+      function showPage(pageId) {
+        // Hide all page sections
+        document.querySelectorAll(".page-section").forEach(function (section) {
+          section.classList.add("hidden");
+        });
+
+        // Show the requested page section
+        const page = document.getElementById(pageId);
+        if (page) {
+          page.classList.remove("hidden");
+          window.scrollTo(0, 0); // Scroll to top on page change
+        }
+      }
     </script>
   </body>
 </html>
